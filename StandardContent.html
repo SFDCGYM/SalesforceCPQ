@@ -1,44 +1,23 @@
-<table border="2" cellpadding="1" cellspacing="1" style="height:200px; width:100%; border: thin solid black; border-collapse: collapse;">
-	<tbody>
-		<tr>
-			<td align="center" style="border-collapse: collapse; width: 33%; border: thin solid black;">
-			<p><strong>Quote For</strong><br />
-			{!quote.SBQQ__BillingName__c}</p>
-
-			<p>{!quote.SBQQ__BillingStreet__c}</p>
-
-			<p>{!quote.SBQQ__BillingState__c}</p>
-
-			<p>{!quote.SBQQ__BillingCity__c}</p>
-
-			<p>{!quote.SBQQ__BillingCountry__c}</p>
-			</td>
-			<td align="center" style="border-collapse: collapse; width: 33%; border: thin solid black;">
-			<p><strong>Quote By</strong></p>
-			&#160;
-
-			<p>{!salesRep.Name}</p>
-
-			<p>{!salesRep.Title}</p>
-
-			<p>{!salesRep.Email}</p>
-
-			<p>{!salesRep.Phone}</p>
-			</td>
-			<td align="center" style="border-collapse: collapse; width: 34%; border: thin solid black;">
-			<p><strong>Primary Point of Contact</strong></p>
-			&#160;
-
-			<p>{!primaryContact.Name}</p>
-
-			<p>{!primaryContact.Title}</p>
-
-			<p>{!primaryContact.MailingCity}</p>
-
-			<p>{!primaryContact.MailingCountry}</p>
-			</td>
-		</tr>
-	</tbody>
+<table >
+   <tbody>
+      <tr>
+         <td align="center" style="border-collapse: collapse; width: 50%; border: thin solid black;"><span style="font-size: x-small;"><strong>Quote For</strong></span><br /></td>
+         <td align="center" style="border-collapse: collapse; width: 50%; border: thin solid black;"><span style="font-size: x-small;"><strong>Quote By</strong></span><br /></td>
+	</tr>
+	<tr>
+         <td align="center" style="border-collapse: collapse; width: 50%; border: thin solid black;">
+            <span style="font-size: x-small;">{!quote.SBQQ__BillingName__c}</span><br />
+            <span style="font-size: x-small;">{!quote.SBQQ__BillingStreet__c}</span><br />
+            <span style="font-size: x-small;">{!quote.SBQQ__BillingState__c}</span><br />
+            <span style="font-size: x-small;">{!quote.SBQQ__BillingCity__c}</span><br />
+            <span style="font-size: x-small;">{!quote.SBQQ__BillingCountry__c}</span><br />
+         </td>
+         <td align="center" style="border-collapse: collapse; width: 50%; border: thin solid black;">
+            <span style="font-size: x-small;">{!salesRep.Name}</span><br />
+            <span style="font-size: x-small;">{!salesRep.Title}</span><br />
+            <span style="font-size: x-small;">{!salesRep.Email}</span><br />
+            <span style="font-size: x-small;">{!salesRep.Phone}</span><br />
+         </td>
+      </tr>
+   </tbody>
 </table>
-
-<p>&#160;</p>
