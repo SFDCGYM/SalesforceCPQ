@@ -1,0 +1,7 @@
+export function onAfterCloneLine(quote, clonedLines) {
+    console.log(clonedLines);
+    clonedLines.clonedLines.standard.forEach(function(line){
+        line.record['Cloned_Lines__c']=true;
+    });    
+    return Promise.resolve();
+ }
