@@ -1,0 +1,15 @@
+export function onInit(quoteLineModels) {
+    if (!quoteLineModels) {
+        return Promise.resolve();
+    }
+    for (var i = 0; i < quoteLineModels.length; i++) {
+        if (quoteLineModels[i].record["DisableProration__c"]) {
+            // Get Values from related list -
+            // quoteLineModels[i].record["SBQQ__Product__r"]["DisableProration__c"]
+             // Example to update any field -
+            //quoteLineModels[i].record["SBQQ__Quantity__c"]= quoteLineModels[i].record["SBQQ__Quantity__c"]+ 1;
+            quoteLineModels[i].calculateFullTermPrice = true;
+        }
+    }
+    return Promise.resolve();
+};
