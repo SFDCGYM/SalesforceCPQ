@@ -1,0 +1,21 @@
+global class OrderPlugin implements SBQQ.OrderManagementPlugin{
+    
+    public Date getOrderStartDate(Id quoteId) {
+    
+        Date orderStart;
+        
+        //Query for Quote that matches provided record ID and retrieve the Delayed Start Days field
+        SBQQ__Quote__c theQuote = [SELECT Id, Delayed_Start_Days__c FROM SBQQ__Quote__c WHERE Id = :quoteId LIMIT 1];
+        
+        //Add the specified number of days to today's date. If no Delayed Start value is populated, treat as zero.
+        if(theQuote.Delayed_Start_Days__c == null) {
+            orderStart = system.today();
+            system.debug('No Delayed Start populated. Using current system date.');
+        } else {
+            orderStart = system.today().addDays(theQuote.Delayed_Start_Days__c.intValue());
+            system.debug('Found Delayed Start of ' + theQuote.Delayed_Start_Days__c.intValue() + '. Order Start date calculated to be ' + orderStart + '.');
+        }
+        
+        return(orderStart);
+    }
+}
